@@ -12,7 +12,7 @@
     <script src="base.js"></script>
 </head>
 <body>
-    <div class="header">        
+    <div class="header">     
         <nav>
             <a href="./index.html"><img src="../Images/logo.jpeg" title="Project Prabhav" class="comp-logo"></a>
             <div class="nav-links" id="navLinks">
@@ -89,20 +89,21 @@
             <form action="your_card_endpoint" method="POST">
                 <div class="input">
                     <h2>Card Number *</h2>
-                    <input type="text" name="card_number" placeholder="Card Number" required>
+                    <input type="text" maxlength="29" name="card_number" placeholder="Card Number" required oninput="formatCardNumber(this)">
                 </div>
                 <div class="input">
                     <h2>Expiry Date *</h2>
-                    <input type="text" name="expiry_date" placeholder="Expiry Date (MM/YY)" required>
+                    <input type="text" maxlength="7" pattern="\d{2}/\d{2}" name="expiry_date" placeholder="Expiry Date (MM/YY)" required oninput="formatExpiryDate(this)">
                 </div>
                 <div class="input">
                     <h2>CVV *</h2>
-                    <input type="text" name="cvv" placeholder="CVV" required>
+                    <input type="text" maxlength="3" pattern="\d{3}"  name="cvv" placeholder="CVV" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                 </div>
                 <br>
                 <button type="submit" class="submit">Proceed with Payment</button>
             </form>
         </div>
+        <h3 class="troubles">Having Troubles? <a href="mailto:office.projectprabhav@gmail.com">Contact Us</a></h3>
     </div>
 </div>
 <footer id="footer"></footer>
