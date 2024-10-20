@@ -15,18 +15,24 @@ body {
     overflow-x: hidden;
 }
 .text-box h1 {
-    font-size: 80px !important;
+    font-size: 7vw !important;
     font-family: "Bebas Neue", sans-serif !important;
     text-align: left !important;
 }
 .text-box h2 {
-    font-size: 50px !important;
+    font-size: 5vw !important;
     font-family: "Bebas Neue", sans-serif !important;
     text-align: left !important;
 }
 .support {
-    font-size: 7vw;
-    text-align: center;
+    margin:2vh 0 8vh 0;
+    font-size: 6vw;
+    font-family:  "Merriweather", sans-serif;
+    font-weight: 600;
+    text-decoration:5px underline;
+    text-underline-offset:1vh;
+    color: rgb(22, 31, 136);
+    text-align:center;
 }
 .payment-options {
     background: white;
