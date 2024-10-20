@@ -36,39 +36,71 @@
 
 <div class="loading-overlay" id="loadingOverlay"></div>
 <div class="org-content">
-    <header>
-        <h1>Support Our Organization</h1>
-        <p>Choose a payment method below to make your donation.</p>
-    </header>
-
-    <h2>Select Payment Method</h2>
+    <h1 class="support">Support Our Organization</h1>
     <div class="payment-options">
-        <div class="payment-option">
-            <h3>UPI</h3>
+        <div class="payment-header">
+            <h2 class="choose">Choose a payment option:</h2>
+        </div>
+
+        <div class="payment-option" onclick="showPayment('upi')">
+            <div class="circle"><div class="circle-inner"></div></div>
+            <h3>UPI / BHIM</h3>
+        </div>
+        <div class="payment-fields" id="upi-fields">
             <form action="your_upi_endpoint" method="POST">
-                <input type="text" name="upi_id" placeholder="Enter UPI ID" required>
-                <button type="submit">Donate via UPI</button>
+                <h3>Select your UPI app</h3>
+                <button class="bhim-upi"><img src="../Images/BHIM.png" alt="BHIM"></button>
+                <button class="phone-pay"><img src="../Images/PhonePe.png" alt="PhonePe"></button>
+                <button class="paytm"><img src="../Images/Paytm.png" alt="Paytm"></button>
+                <button class="google-pay"><img src="../Images/GooglePay.png" alt="GooglePay"></button>
+                <button type="submit" class="submit">Proceed with Payment</button>
             </form>
         </div>
-        <div class="payment-option">
+
+        <div class="payment-option" onclick="showPayment('netbanking')">
+            <div class="circle"><div class="circle-inner"></div></div>
             <h3>Net Banking</h3>
+        </div>
+        <div class="payment-fields" id="netbanking-fields">
             <form action="your_net_banking_endpoint" method="POST">
-                <select name="bank" required>
-                    <option value="" disabled selected>Select Your Bank</option>
-                    <option value="bank1">Bank 1</option>
-                    <option value="bank2">Bank 2</option>
-                    <option value="bank3">Bank 3</option>
-                </select>
-                <button type="submit">Donate via Net Banking</button>
+                <h3>Select your Bank</h3>
+                <button type="button" class="sbi" onclick="selectBank('SBI')">
+                    <img src="../Images/SBI.png" alt="SBI">
+                </button>
+                <button type="button" class="kotak" onclick="selectBank('Kotak')">
+                    <img src="../Images/Kotak.png" alt="Kotak">
+                </button>
+                <button type="button" class="axis" onclick="selectBank('Axis')">
+                    <img src="../Images/Axis.png" alt="Axis">
+                </button>
+                <button type="button" class="hdfc" onclick="selectBank('HDFC')">
+                    <img src="../Images/HDFC.png" alt="HDFC">
+                </button>
+            
+                <button type="submit" class="submit">Proceed with Payment</button>
             </form>
         </div>
-        <div class="payment-option">
+
+        <div class="payment-option" onclick="showPayment('card')">
+            <div class="circle"><div class="circle-inner"></div></div>
             <h3>Credit/Debit Card</h3>
+        </div>
+        <div class="payment-fields" id="card-fields">
             <form action="your_card_endpoint" method="POST">
-                <input type="text" name="card_number" placeholder="Card Number" required>
-                <input type="text" name="expiry_date" placeholder="Expiry Date (MM/YY)" required>
-                <input type="text" name="cvv" placeholder="CVV" required>
-                <button type="submit">Donate via Card</button>
+                <div class="input">
+                    <h2>Card Number *</h2>
+                    <input type="text" name="card_number" placeholder="Card Number" required>
+                </div>
+                <div class="input">
+                    <h2>Expiry Date *</h2>
+                    <input type="text" name="expiry_date" placeholder="Expiry Date (MM/YY)" required>
+                </div>
+                <div class="input">
+                    <h2>CVV *</h2>
+                    <input type="text" name="cvv" placeholder="CVV" required>
+                </div>
+                <br>
+                <button type="submit" class="submit">Proceed with Payment</button>
             </form>
         </div>
     </div>
