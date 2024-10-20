@@ -175,19 +175,19 @@ function showPayment(option) {
 
         if (opt === option) {
             fields.style.display = 'block';
-            circleInner.style.display = 'block';  // Show blue circle
-            circle.classList.add('selected');      // Add selected class for styling
+            circleInner.style.display = 'block';
+            circle.classList.add('selected');
         } else {
             fields.style.display = 'none';
-            circleInner.style.display = 'none';    // Hide blue circle
-            circle.classList.remove('selected');    // Remove selected class for styling
+            circleInner.style.display = 'none';
+            circle.classList.remove('selected');
         }
     });
 }
 
 function selectBank(bankName) {
     const dropdown = document.getElementById('bankDropdown');
-    dropdown.value = bankName;  // Set the selected bank
+    dropdown.value = bankName;
 }
 
 // Initialize default selection
