@@ -164,3 +164,33 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Element with ID 'back-to-top' not found.");
     }
 });
+
+// Payment Page
+function showPayment(option) {
+    const paymentOptions = ['upi', 'netbanking', 'card'];
+    paymentOptions.forEach(opt => {
+        const fields = document.getElementById(`${opt}-fields`);
+        const circleInner = document.querySelector(`.payment-option[onclick="showPayment('${opt}')"] .circle-inner`);
+        const circle = document.querySelector(`.payment-option[onclick="showPayment('${opt}')"] .circle`);
+
+        if (opt === option) {
+            fields.style.display = 'block';
+            circleInner.style.display = 'block';  // Show blue circle
+            circle.classList.add('selected');      // Add selected class for styling
+        } else {
+            fields.style.display = 'none';
+            circleInner.style.display = 'none';    // Hide blue circle
+            circle.classList.remove('selected');    // Remove selected class for styling
+        }
+    });
+}
+
+function selectBank(bankName) {
+    const dropdown = document.getElementById('bankDropdown');
+    dropdown.value = bankName;  // Set the selected bank
+}
+
+// Initialize default selection
+document.addEventListener('DOMContentLoaded', () => {
+    showPayment('upi');  // Show UPI option by default
+});
