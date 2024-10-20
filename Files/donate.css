@@ -183,9 +183,15 @@ body {
     vertical-align: middle;
 }
 #card-fields h2{
-    font-size:1.2vw;
+    font-size:1.1vw;
+    color:grey;
 }
 #card-fields input[type="text"] {
     height:5vh;
     width:12vw;
+}
+.troubles{
+    font-size:1.2vw;
+    text-align:center;
+    margin-top:4vh;
 }

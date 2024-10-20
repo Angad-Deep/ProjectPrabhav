@@ -194,3 +194,33 @@ function selectBank(bankName) {
 document.addEventListener('DOMContentLoaded', () => {
     showPayment('upi');  // Show UPI option by default
 });
+
+// Payments Page Input
+function formatCardNumber(input) {
+    // Remove any non-digit character
+    input.value = input.value.replace(/[^0-9]/g, '');
+    
+    // Add dashes after every 4 digits
+    let formattedValue = input.value.replace(/(\d{4})(?=\d)/g, '$1-');
+    
+    // Limit to 29 characters (24 digits + 5 dashes)
+    if (formattedValue.length > 29) {
+        formattedValue = formattedValue.slice(0, 29);
+    }
+    
+    input.value = formattedValue;
+}
+function formatExpiryDate(input) {
+    // Remove any non-digit character
+    input.value = input.value.replace(/[^0-9]/g, '');
+
+    // Insert '/' after the first two digits
+    if (input.value.length > 2) {
+        input.value = input.value.slice(0, 2) + '/' + input.value.slice(2, 4);
+    }
+
+    // Limit to 5 characters (2 digits, a '/', 2 digits)
+    if (input.value.length > 5) {
+        input.value = input.value.slice(0, 5);
+    }
+}
