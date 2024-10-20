@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Project Prabhaav</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="menu.css">
+    <script src="base.js"></script>
+</head>
+<body>
+    <div class="org-content">
+        <header>
+            <h1>Support Our Organization</h1>
+            <p>Choose a payment method below to make your donation.</p>
+        </header>
+
+        <h2>Select Payment Method</h2>
+        <div class="payment-options">
+            <div class="payment-option">
+                <h3>UPI</h3>
+                <form action="your_upi_endpoint" method="POST">
+                    <input type="text" name="upi_id" placeholder="Enter UPI ID" required>
+                    <button type="submit">Donate via UPI</button>
+                </form>
+            </div>
+            <div class="payment-option">
+                <h3>Net Banking</h3>
+                <form action="your_net_banking_endpoint" method="POST">
+                    <select name="bank" required>
+                        <option value="" disabled selected>Select Your Bank</option>
+                        <option value="bank1">Bank 1</option>
+                        <option value="bank2">Bank 2</option>
+                        <option value="bank3">Bank 3</option>
+                    </select>
+                    <button type="submit">Donate via Net Banking</button>
+                </form>
+            </div>
+            <div class="payment-option">
+                <h3>Credit/Debit Card</h3>
+                <form action="your_card_endpoint" method="POST">
+                    <input type="text" name="card_number" placeholder="Card Number" required>
+                    <input type="text" name="expiry_date" placeholder="Expiry Date (MM/YY)" required>
+                    <input type="text" name="cvv" placeholder="CVV" required>
+                    <button type="submit">Donate via Card</button>
+                </form>
+            </div>
+        </div>
+</div>
+<footer id="footer"></footer>
+<button id="back-to-top"><img src="up.png" alt="up"></button>
+<div id="mob-menu"></div> 
+
+</body>
+</html>
